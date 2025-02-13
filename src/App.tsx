@@ -1,5 +1,6 @@
 import React from 'react';
-import { Shield, Users, Brain, Lock, CheckCircle, Globe, AlertTriangle, Fingerprint } from 'lucide-react';
+import { Shield, Users, Brain, Lock, CheckCircle, Globe, Fingerprint } from 'lucide-react';
+import z1 from './assets/z1.jpg';  // Ensure the path to your image is correct
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <div className="flex space-x-4">
               <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
               <a href="#how-it-works" className="text-gray-600 hover:text-gray-900">How it Works</a>
-              <button 
+              <button
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
                 onClick={() => window.open('https://chrome.google.com/webstore', '_blank')}
                 aria-label="Install Extension"
@@ -28,9 +29,21 @@ function App() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
+        {/* Hero Image Section */}
+        <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="w-full h-96 overflow-hidden rounded-lg">
+            <img
+              src={z1}
+              alt="Boy playing at laptop in the room"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </section>
+
+        {/* Protect Your Family Section */}
+        <section className="text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="bg-white bg-opacity-80 p-10 rounded-lg">
             <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
               Protect Your Family from
               <span className="text-blue-600"> Harmful Content</span>
@@ -40,7 +53,7 @@ function App() {
             </p>
             <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
-                <button 
+                <button
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
                   onClick={() => window.open('https://chrome.google.com/webstore', '_blank')}
                   aria-label="Get Started with Extension Installation"
@@ -62,8 +75,8 @@ function App() {
 
             <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="flex flex-col items-center">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                  <Fingerprint className="h-6 w-6" aria-hidden="true" />
+                <div className="bg-blue-500 p-5 rounded-full">
+                  <Fingerprint className="h-12 w-12 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 text-lg font-medium text-gray-900">Advanced Detection</h3>
                 <p className="mt-2 text-center text-gray-500">
@@ -72,8 +85,8 @@ function App() {
               </div>
 
               <div className="flex flex-col items-center">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                  <Lock className="h-6 w-6" aria-hidden="true" />
+                <div className="bg-blue-500 p-5 rounded-full">
+                  <Lock className="h-12 w-12 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 text-lg font-medium text-gray-900">Parental Controls</h3>
                 <p className="mt-2 text-center text-gray-500">
@@ -82,8 +95,8 @@ function App() {
               </div>
 
               <div className="flex flex-col items-center">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                  <Globe className="h-6 w-6" aria-hidden="true" />
+                <div className="bg-blue-500 p-5 rounded-full">
+                  <Globe className="h-12 w-12 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 text-lg font-medium text-gray-900">Global Database</h3>
                 <p className="mt-2 text-center text-gray-500">
@@ -102,31 +115,24 @@ function App() {
               <p className="mt-4 text-gray-500">Simple setup, powerful protection</p>
             </div>
 
-            <div className="mt-20">
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                  <div className="w-full border-t border-gray-300"></div>
+            <div className="mt-20 flex justify-center space-x-10">
+              <div className="flex flex-col items-center">
+                <div className="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center">
+                  1
                 </div>
-                <div className="relative flex justify-between">
-                  <div className="flex flex-col items-center">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white">
-                      1
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500">Install Extension</p>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white">
-                      2
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500">Configure Settings</p>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white">
-                      3
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500">Stay Protected</p>
-                  </div>
+                <p className="mt-2 text-sm text-gray-500">Install Extension</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center">
+                  2
                 </div>
+                <p className="mt-2 text-sm text-gray-500">Configure Settings</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center">
+                  3
+                </div>
+                <p className="mt-2 text-sm text-gray-500">Stay Protected</p>
               </div>
             </div>
           </div>
